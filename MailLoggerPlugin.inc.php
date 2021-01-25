@@ -50,7 +50,7 @@ class MailLoggerPlugin extends GenericPlugin {
 		if (!file_exists($dir)) {
 			mkdir($dir);
 		}
-		$fn = date('Ymdhis') . '-' . microtime();
+		$fn = date('Ymdhis') . '-' . explode(' ', microtime())[0];
 		file_put_contents("$dir/$fn", print_r($mail->_data, true));
 	}
 }
